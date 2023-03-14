@@ -1,10 +1,10 @@
-package com.example.b4.controller;
+package com.example.b4.controller.user;
 
 import com.example.b4.auth.PrincipalDetails;
 import com.example.b4.config.JwtTokenProvider;
 import com.example.b4.dto.JwtTokenDto;
 import com.example.b4.dto.RequestTokenDto;
-import com.example.b4.dto.UserJoinDto;
+import com.example.b4.dto.user.UserJoinDto;
 import com.example.b4.entity.RefreshToken;
 import com.example.b4.entity.Role;
 import com.example.b4.entity.User;
@@ -21,7 +21,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
