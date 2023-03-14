@@ -18,8 +18,8 @@ public class UserService implements UserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
-         com.example.b4.entity.User member = memberRepository.findByLoginId(id)
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+         com.example.b4.entity.User member = memberRepository.findByEmail(email)
                 .orElseThrow(IllegalStateException::new);
 
 

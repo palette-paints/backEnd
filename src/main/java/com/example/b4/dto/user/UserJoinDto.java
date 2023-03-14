@@ -1,4 +1,4 @@
-package com.example.b4.dto;
+package com.example.b4.dto.user;
 
 import lombok.Data;
 
