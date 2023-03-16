@@ -1,5 +1,6 @@
 package com.example.b4.entity;
 
+import com.example.b4.dto.user.MypageDto;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -74,5 +75,14 @@ public class User {
         this.nickname = nickname;
         this.userBirth = userBirth;
         this.userPhone = userPhone;
+    }
+
+    public void updateUserInfo(MypageDto mypageDto){
+        this.userBirth = mypageDto.getUserBirth();
+        this.userJob = mypageDto.getUserJob();
+        this.role = mypageDto.getUserRole();
+        this.username = mypageDto.getUserName();
+        this.userPhone = mypageDto.getUserPhone();
+        this.email = mypageDto.getEmail();
     }
 }
