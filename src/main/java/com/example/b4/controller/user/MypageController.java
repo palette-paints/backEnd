@@ -5,9 +5,8 @@ import com.example.b4.dto.user.MypageDto;
 import com.example.b4.repository.UserRepository;
 import com.example.b4.service.user.MypageService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +23,10 @@ public class MypageController {
         return mypageService.getUserInfo(getEmail(request));
     }
 
+    @PutMapping("")
+    public ResponseEntity updateUserInfo(ServletRequest request, @RequestBody MypageDto mypageDto) {
+        return mypageService.updateUserInfo(getEmail(request), mypageDto);
+    }
 
     private String getEmail(ServletRequest request){
         String token = jwtTokenProvider.resolveToken((HttpServletRequest) request);

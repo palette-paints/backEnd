@@ -74,7 +74,7 @@ public class UserController {
 
         User user = User.userDetailRegister()
                         .username(userInfo.getUserName()).email(userInfo.getUserEmail())
-                        .role(Role.ROLE_USER).password(encodePwd).userBirth(userInfo.getUserBirth())
+                        .role(Role.USER).password(encodePwd).userBirth(userInfo.getUserBirth())
                         .userJob(userInfo.getUserJob()).userPhone(userInfo.getUserPhone()).provider("form")
                         .loginId(userInfo.getLoginId()).nickname(userInfo.getNickname()).build();
 

@@ -37,7 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").authenticated()
                 .antMatchers("/manager/**").access("hasRole('MANAGER') or hasRole('ADMIN')")
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/h2-console/**").permitAll()
                 .anyRequest().permitAll()
                 .and()					//추가
                 .csrf().disable()

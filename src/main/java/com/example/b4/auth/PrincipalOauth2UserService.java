@@ -44,7 +44,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         String password = bCryptPasswordEncoder.encode("패스워드"+uuid);
 
         String email = oAuth2UserInfo.getEmail();	//수정
-        Role role = Role.ROLE_USER;
+        Role role = Role.USER;
 
         String year = oAuth2UserInfo.getBirthYear();
         String birth = year + "-" + oAuth2UserInfo.getBirthDay();

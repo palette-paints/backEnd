@@ -80,7 +80,6 @@ public class User {
     public void updateUserInfo(MypageDto mypageDto){
         this.userBirth = mypageDto.getUserBirth();
         this.userJob = mypageDto.getUserJob();
-        this.role = mypageDto.getUserRole();
         this.username = mypageDto.getUserName();
         this.userPhone = mypageDto.getUserPhone();
         this.email = mypageDto.getEmail();
