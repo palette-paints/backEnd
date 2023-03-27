@@ -7,6 +7,7 @@ import com.example.b4.dto.mind.MindListDto;
 import com.example.b4.entity.User;
 import com.example.b4.entity.post.Mind;
 import com.example.b4.entity.post.Post;
+import com.example.b4.entity.post.PostCategory;
 import com.example.b4.repository.PostRepository;
 import com.example.b4.repository.UserRepository;
 import com.example.b4.repository.mind.MindRepository;
@@ -37,6 +38,7 @@ public class MindService {
                 .title(req.getTitle())
                 .attachedFile(req.getMindAttachedFile())
                 .category(req.getCategory())
+                .code(PostCategory.MIND)
                 .build();
 
         Boolean status = Boolean.FALSE;

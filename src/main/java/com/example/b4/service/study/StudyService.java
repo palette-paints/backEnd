@@ -5,6 +5,7 @@ import com.example.b4.dto.study.StudyDetailReq;
 import com.example.b4.dto.study.StudyListDto;
 import com.example.b4.entity.User;
 import com.example.b4.entity.post.Post;
+import com.example.b4.entity.post.PostCategory;
 import com.example.b4.entity.post.Study;
 //import com.example.b4.entity.user.User;
 import com.example.b4.repository.PostRepository;
@@ -45,6 +46,7 @@ public class StudyService {
                 .title(req.getTitle())
                 .attachedFile(req.getStudyAttachedFile())
                 .category(req.getCategory())
+                .code(PostCategory.STUDY)
                 .build();
 //        Post savedPost = postRepository.save(newPost);
 

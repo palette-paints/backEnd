@@ -7,6 +7,7 @@ import com.example.b4.dto.study.StudyDetailDto;
 import com.example.b4.entity.User;
 import com.example.b4.entity.post.Play;
 import com.example.b4.entity.post.Post;
+import com.example.b4.entity.post.PostCategory;
 import com.example.b4.repository.PostRepository;
 import com.example.b4.repository.UserRepository;
 import com.example.b4.repository.play.PlayRepository;
@@ -39,6 +40,7 @@ public class PlayService {
                 .title(req.getTitle())
                 .attachedFile(req.getPlayAttachedFile())
                 .category(req.getCategory())
+                .code(PostCategory.PLAY)
                 .build();
 
         Play newPlay = Play.builder()
