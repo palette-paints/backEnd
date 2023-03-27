@@ -32,4 +32,5 @@ public class MypageController {
         String token = jwtTokenProvider.resolveToken((HttpServletRequest) request);
         return jwtTokenProvider.getUserPk(token);
     }
+
 }

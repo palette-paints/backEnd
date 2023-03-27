@@ -12,6 +12,8 @@ import java.util.List;
 
 public interface PlayRepository extends JpaRepository<Play,Long> {
 
+    Play findByPost(Post post);
+
     @Query("select new com.example.b4.dto.play.PlayListDto(" +
             "pl.playId,p.user.nickname,p.title,p.category,p.attachedFile,p.bookmark,p.createdDate,pl.status)" +
             "from Play pl join pl.post p where p.postId=pl.post.postId")
