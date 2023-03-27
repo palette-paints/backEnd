@@ -16,6 +16,7 @@ public interface StudyRepository extends JpaRepository<Study, Long> {
 //            "from Study s join s.post p where p.postId=s.post.postId")
 //    List<StudyListDto> findStudyListDto();
 
+    Study findByPost(Post post);
 
     @Query("select new com.example.b4.dto.study.StudyListDto(" +
             "s.studyId,p.user.nickname,p.title,p.category,p.attachedFile,p.bookmark,p.createdDate,p.comments.size)" +

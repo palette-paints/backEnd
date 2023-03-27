@@ -2,6 +2,7 @@ package com.example.b4.controller.user;
 
 import com.example.b4.config.JwtTokenProvider;
 import com.example.b4.dto.user.PlayStatusDto;
+import com.example.b4.dto.user.StudyStatusDto;
 import com.example.b4.entity.post.Play;
 import com.example.b4.entity.post.PlayStatus;
 import com.example.b4.repository.PostRepository;
@@ -27,6 +28,16 @@ public class StatusController {
     @GetMapping("/plays")
     public List<PlayStatusDto> getPlaysUser(ServletRequest request) {
         return userStatusService.getPlayStatus(getEmail(request));
+    }
+
+//    @GetMapping("/minds")
+//    public List<PlayStatusDto> getPlaysUser(ServletRequest request) {
+//        return userStatusService.getPlayStatus(getEmail(request));
+//    }
+
+    @GetMapping("/studys")
+    public List<StudyStatusDto> getMypagePlaysUser(ServletRequest request) {
+        return userStatusService.getStudyStatus(getEmail(request));
     }
 
     private String getEmail(ServletRequest request){
