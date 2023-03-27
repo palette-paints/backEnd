@@ -1,12 +1,10 @@
 package com.example.b4.service.user;
 
+import com.example.b4.dto.user.MindStatusDto;
 import com.example.b4.dto.user.PlayStatusDto;
 import com.example.b4.dto.user.StudyStatusDto;
 import com.example.b4.entity.User;
-import com.example.b4.entity.post.Play;
-import com.example.b4.entity.post.Post;
-import com.example.b4.entity.post.PostCategory;
-import com.example.b4.entity.post.Study;
+import com.example.b4.entity.post.*;
 import com.example.b4.repository.PostRepository;
 import com.example.b4.repository.UserRepository;
 import com.example.b4.repository.mind.MindRepository;
@@ -60,5 +58,21 @@ public class UserStatusService {
         }
 
         return studys;
+    }
+
+    public List<MindStatusDto> getMindStatus(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalStateException("없는 유저"));
+        List<MindStatusDto> minds = new ArrayList<>();
+        List<Post> posts = postRepository.findByCodeAndUser(PostCategory.MIND, user);
+
+        for(Post post : posts) {
+            Mind m = mindRepository.findByPost(post);
+            MindStatusDto mind = new MindStatusDto(post);
+            mind.updateUserStatus(user,m);
+            minds.add(mind);
+        }
+
+        return minds;
     }
 }

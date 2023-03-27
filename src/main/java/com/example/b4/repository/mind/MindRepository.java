@@ -14,6 +14,8 @@ import java.util.List;
 
 public interface MindRepository extends JpaRepository<Mind, Long> {
 
+    Mind findByPost(Post post);
+
     @Query("select new com.example.b4.dto.mind.MindListDto(" +
             "m.mindId,p.user.nickname,p.title,p.category,p.attachedFile,p.bookmark,m.status,p.comments.size,p.createdDate)" +
             "from Mind m join m.post p where p.postId=m.post.postId ")
